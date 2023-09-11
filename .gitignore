@@ -1,3 +1,7 @@
+.vscode
+.streamlit
+futanalitica-firebase-adminsdk-iqmto-e5cb044b9c.json
+.streamlit\credentials.toml
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
