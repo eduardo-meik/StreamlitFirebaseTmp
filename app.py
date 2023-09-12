@@ -3,24 +3,24 @@ import streamlit as st
 from streamlit_option_menu import option_menu
 import firebase_admin
 from firebase_admin import credentials
+from firebase_admin import firestore
 from utils.timeline import display_timeline
 from utils.games import display_games
 from utils.timeline import display_timeline
 from utils.analysis import display_analysis
 import requests
 
-# Initialize Firebase SDK
-def initialize_firebase():
+# Initialize Firebase SDK with service account
+def init_firestore_client_service_account():
     key_dict = json.loads(st.secrets["textkey"])
     creds = credentials.Certificate(key_dict)
 
-    if not firebase_admin._apps:
-        firebase_admin.initialize_app(creds)
+    app = firebase_admin.initialize_app(cred)
+
+    db = firestore.client()
         
-# Define main app function
-def main():
-    initialize_firebase()
-    
+    return db
+   
 # Navigation bar Menu
 selected = option_menu(
         menu_title=None, # menu title

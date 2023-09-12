@@ -1,5 +1,5 @@
 import streamlit as st
-from google.cloud import firestore
+
 
 # Establish a connection to Firestore
 db = firestore.Client()
